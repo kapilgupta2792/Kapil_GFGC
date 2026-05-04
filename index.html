@@ -329,9 +329,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       gap: 0;
-      overflow: hidden;
+      overflow-x: auto;
     }
 
     .value-item {
@@ -436,7 +436,7 @@
       border-radius: 0;
       overflow: hidden;
       color: var(--white);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
       transition: transform 0.3s;
     }
 
@@ -517,6 +517,7 @@
       gap: 1.5rem;
       margin-top: 3rem;
     }
+
     .ticker-item {
       padding: 0.8rem;
       text-align: center;
@@ -527,8 +528,15 @@
       color: var(--white);
       text-transform: uppercase;
     }
-    .ticker-blue { background: var(--blue); }
-    .ticker-sky { background: var(--sky); grid-column: span 4; }
+
+    .ticker-blue {
+      background: var(--blue);
+    }
+
+    .ticker-sky {
+      background: var(--sky);
+      grid-column: span 4;
+    }
 
     .services-premium-grid {
       display: grid;
@@ -536,26 +544,31 @@
       gap: 1.5rem;
       margin-top: 1rem;
     }
+
     .svc-card {
       background: #ffffff;
-      border: 1px solid rgba(0,0,0,0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: 0;
       padding: 2.5rem 2rem;
       position: relative;
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
       z-index: 1;
     }
+
     .svc-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
       border-color: rgba(0, 163, 224, 0.3);
     }
+
     .svc-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 4px;
       background: linear-gradient(90deg, var(--sky), var(--blue));
       transform: scaleX(0);
@@ -563,9 +576,11 @@
       transition: transform 0.4s ease;
       z-index: 2;
     }
+
     .svc-card:hover::before {
       transform: scaleX(1);
     }
+
     .svc-bg-num {
       position: absolute;
       right: -10px;
@@ -573,14 +588,16 @@
       font-size: 10rem;
       font-weight: 800;
       font-family: 'Nord', 'Montserrat', sans-serif;
-      color: rgba(0,0,0,0.02);
+      color: rgba(0, 0, 0, 0.02);
       line-height: 1;
       z-index: -1;
       transition: color 0.4s ease;
     }
+
     .svc-card:hover .svc-bg-num {
       color: rgba(0, 163, 224, 0.05);
     }
+
     .svc-icon-wrapper {
       width: 60px;
       height: 60px;
@@ -593,11 +610,13 @@
       margin-bottom: 2rem;
       transition: all 0.4s ease;
     }
+
     .svc-card:hover .svc-icon-wrapper {
       background: var(--sky);
       color: var(--white);
       transform: scale(1.1) rotate(5deg);
     }
+
     .svc-title {
       font-size: 1.5rem;
       font-weight: 700;
@@ -605,11 +624,13 @@
       margin-bottom: 1.5rem;
       font-family: 'Nord', 'Montserrat', sans-serif;
     }
+
     .svc-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
+
     .svc-list li {
       display: flex;
       align-items: flex-start;
@@ -619,6 +640,7 @@
       color: #666;
       line-height: 1.5;
     }
+
     .svc-list li svg {
       flex-shrink: 0;
       margin-top: 3px;
@@ -1265,7 +1287,7 @@
       color: var(--blue);
       margin-bottom: 1rem;
     }
-    
+
     .cta-banner h2 em {
       color: var(--gray);
     }
@@ -1277,12 +1299,12 @@
       margin: 0 auto 2rem;
       line-height: 1.7;
     }
-    
+
     .cta-banner .btn-outline {
       border-color: var(--blue);
       color: var(--blue);
     }
-    
+
     .cta-banner .btn-outline:hover {
       background: var(--blue);
       color: var(--white);
@@ -1428,20 +1450,20 @@
       .team-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .ow-row {
         flex-direction: column;
       }
-      
+
       .ow-num {
         width: 100%;
         padding: 1.5rem;
       }
-      
+
       .ow-content {
         padding: 1.5rem;
       }
-      
+
       .services-ticker-grid .ticker-sky {
         grid-column: 1 / -1;
       }
@@ -1556,21 +1578,20 @@
       <div class="hero-content">
         <h1>Outcome Linked Advisory<br>for <em>Financial Services</em></h1>
         <p class="hero-sub"
-          style="font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--sky); text-transform: uppercase;">
+          style="font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--sky);">
           Banks · NBFCs · HFCs · New Age Fintechs</p>
         <div class="hero-actions">
           <a href="#" class="btn btn-primary" onclick="return showPage('services')">Explore Services</a>
-          <a href="#" class="btn btn-outline" onclick="return showPage('credentials')">View Client Stories</a>
         </div>
       </div>
     </div>
 
     <div class="value-strip">
-      <div class="value-item"><span class="value-dot"></span>Rapid Disbursement Growth</div>
-      <div class="value-item"><span class="value-dot"></span>Improved Opex Efficiency</div>
-      <div class="value-item"><span class="value-dot"></span>Reduced Credit Costs</div>
-      <div class="value-item"><span class="value-dot"></span>Desired ROA / ROE</div>
-      <div class="value-item"><span class="value-dot"></span>Yield Optimization</div>
+      <div class="value-item"><span class="value-dot"></span>RAPIDLY SCALE DISBURSEMENT</div>
+      <div class="value-item"><span class="value-dot"></span>RE-IMAGINE PRODUCT MARKET FIT</div>
+      <div class="value-item"><span class="value-dot"></span>DRIVE OPERATIONAL EFFICIENCY</div>
+      <div class="value-item"><span class="value-dot"></span>BETTER PAR MANAGEMENT</div>
+      <div class="value-item"><span class="value-dot"></span>DESIRED ROA</div>
     </div>
 
     <section style="background:var(--white);">
@@ -1581,128 +1602,196 @@
         <div class="fade-in">
           <div style="display:flex; flex-direction:column; gap:1.5rem;">
             <div style="padding:2.5rem 2rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:0;">
-              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
+              <div
+                style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
                 1 Trillion</div>
-              <div style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
-                Combined managed loanbook experience of leadership</div>
+              <div
+                style="font-size:0.85rem; font-weight:700; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
+                Our Leadership brings experience of managing combined loanbook of INR 1 Trillion+</div>
             </div>
             <div style="padding:2.5rem 2rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:0;">
-              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:1.8rem; font-weight:700; color:var(--blue); line-height:1.1;">
+              <div
+                style="font-family:'Nord','Montserrat',sans-serif; font-size:1.8rem; font-weight:700; color:var(--blue); line-height:1.1;">
                 Diverse clientele</div>
-              <div style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
-                From large banks to a digital native fintech NBFC</div>
+              <div
+                style="font-size:0.85rem; font-weight:700; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
+                From large banks to HFCs to Digitally Native Fintech NBFCs</div>
             </div>
             <div style="padding:2.5rem 2rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:0;">
-              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
-                6 Layers</div>
-              <div style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
-                Advisory across Product, policy, process, distribution, people & technology.</div>
+              <div
+                style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
+                Across business Levers</div>
+              <div
+                style="font-size:0.85rem; font-weight:700; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
+                Service offerings across Product, policy, process, distribution, people & technology</div>
             </div>
           </div>
         </div>
         <div class="fade-in">
-          <div class="pillar-grid" style="margin-top:0;">
-            <div class="pillar" style="grid-column:1/-1;">
-              <div class="pillar-icon">🎯</div>
-              <h3>Outcome Focused</h3>
+          <div style="display:flex; flex-direction:column; gap:1.5rem; height: 100%;">
+            <div style="padding:2.5rem 2rem; background:var(--blue); border-left:3px solid var(--sky); border-radius:0; flex: 1; display: flex; align-items: center; justify-content: space-between;">
+              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:1.5rem; font-weight:700; color:var(--white); line-height:1;">
+                Outcome Focused</div>
+              <div style="color:var(--sky); opacity:0.8;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+              </div>
             </div>
-            <div class="pillar" style="grid-column:1/-1;">
-              <div class="pillar-icon">🏛</div>
-              <h3>Experience Based</h3>
+            <div style="padding:2.5rem 2rem; background:var(--blue); border-left:3px solid var(--sky); border-radius:0; flex: 1; display: flex; align-items: center; justify-content: space-between;">
+              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:1.5rem; font-weight:700; color:var(--white); line-height:1;">
+                Experience Based</div>
+              <div style="color:var(--sky); opacity:0.8;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+              </div>
             </div>
-            <div class="pillar" style="grid-column:1/-1;">
-              <div class="pillar-icon">🤝</div>
-              <h3>Skin in the Game</h3>
+            <div style="padding:2.5rem 2rem; background:var(--blue); border-left:3px solid var(--sky); border-radius:0; flex: 1; display: flex; align-items: center; justify-content: space-between;">
+              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:1.5rem; font-weight:700; color:var(--white); line-height:1;">
+                Skin in the Game</div>
+              <div style="color:var(--sky); opacity:0.8;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section style="background:var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <section
+      style="background:var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
       <div style="max-width: 1400px; margin: 0 auto; padding: 0 1rem;">
-        <span class="section-eyebrow">What We Deliver</span>
-        <div class="section-title" style="color:var(--blue);">What Outcomes<br><em>We Commit To</em></div>
-        <p class="section-desc" style="color:var(--gray); max-width: 800px;"><strong>THE COMMITMENT:</strong> Committed to immerse ourselves in your success, with intention to put our skin in the game, either as success fees and/or risk sharing. Outcomes are agreed upfront and tracked throughout the engagement for achievement.</p>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 4rem;">
-          
+        <div class="section-title" style="color:var(--blue);">What Outcomes <em>We Commit To</em></div>
+        <p class="section-desc" style="color:var(--gray); max-width: 800px;">Committed to immerse ourselves in your success. Outcomes are agreed upfront and tracked throughout the engagement for achievement.</p>
+
+        <div
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 4rem;">
+
           <!-- Card 1 -->
-          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div class="fade-in"
+            style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
             <div style="color: var(--blue); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                <polyline points="17 6 23 6 23 12"></polyline>
+              </svg>
             </div>
-            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Disbursement Growth</h3>
-            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
+            <h3
+              style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">
+              Disbursement Growth</h3>
+            <ul
+              style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Break the stagnation</li>
               <li>Better market fit</li>
               <li>Improving confidence to lend</li>
             </ul>
-            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
-              Targeted product-market fit interventions, with real-time advisory and on-ground support to improve confidence to lend in underserved areas.
+            <p
+              style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
+              Targeted product-market fit interventions, with real-time advisory and on-ground support to improve
+              confidence to lend.
             </p>
           </div>
 
           <!-- Card 2 -->
-          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div class="fade-in"
+            style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
             <div style="color: var(--blue); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
             </div>
-            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Desired Yield</h3>
-            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
+            <h3
+              style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">
+              Desired Yield</h3>
+            <ul
+              style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Incorporating the trade-offs</li>
               <li>Target segments & pricing</li>
               <li>Based on actual pan-India experience</li>
             </ul>
-            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
-              Segmentation/personas, risk-based pricing framework and market insights.
+            <p
+              style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
+              Segmentation, Customer Personas, risk-based pricing framework and market insights.
             </p>
           </div>
 
           <!-- Card 3 -->
-          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div class="fade-in"
+            style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
             <div style="color: var(--blue); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path
+                  d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                </path>
+              </svg>
             </div>
-            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Reducing Opex</h3>
-            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
+            <h3
+              style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">
+              Operational efficiency</h3>
+            <ul
+              style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Focus on Opex / disbursement</li>
-              <li>Process, People, Technology</li>
-              <li>Fix target KPI and achieve in a time bound manner</li>
+              <li>Re-align Process, People & Technology levers</li>
+              <li>Fix target KPIs and achieve in a time bound manner</li>
             </ul>
-            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
-              Support in running industry leading operating practices - leveraging expertise from running ops at industry leading numbers.
+            <p
+              style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
+              Re-aligned operating model including policies, processess/ detailed workflows, distribution, people and technology- leveraging expertise from running ops at industry leading numbers.
             </p>
           </div>
 
           <!-- Card 4 -->
-          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div class="fade-in"
+            style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
             <div style="color: var(--blue); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
             </div>
-            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Better Managed PAR</h3>
-            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
-              <li>Evolving with increasing book size</li>
+            <h3
+              style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">
+              Better Managed PAR</h3>
+            <ul
+              style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
+              <li>Evolve with increasing book size</li>
               <li>Not dashboards, but real-time inputs on portfolio management</li>
+              <li>Razor sharp focus on pre-delinquency management and early resolution</li>
             </ul>
-            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
+            <p
+              style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
               Bring to fore track record of delivering fast growth while keeping industry leading book quality.
             </p>
           </div>
 
           <!-- Card 5 -->
-          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+          <div class="fade-in"
+            style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
             <div style="color: var(--blue); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="22" y1="12" x2="18" y2="12"></line>
+                <line x1="6" y1="12" x2="2" y2="12"></line>
+                <line x1="12" y1="6" x2="12" y2="2"></line>
+                <line x1="12" y1="22" x2="12" y2="18"></line>
+              </svg>
             </div>
-            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Improved ROA / ROE</h3>
-            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
+            <h3
+              style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">
+              Improved ROA</h3>
+            <ul
+              style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Focused on shareholder interests</li>
-              <li>Target ROA / ROE locked upfront</li>
+              <li>Target ROA locked upfront</li>
               <li>Achievement in a timebound manner</li>
             </ul>
-            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
-              Leadership commitment to achieve desired numbers through on-going support and success fees/risk sharing based models.
+            <p
+              style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
+              Leadership commitment to achieve desired numbers through on-going support and success fees/risk sharing
+              based models.
             </p>
           </div>
 
@@ -1713,8 +1802,7 @@
 
 
     <div class="cta-banner">
-      <h2>Ready to Achieve Your<br><em>Vision 2031 Goals?</em></h2>
-      <p>Let's discuss your growth constraints and design a clear performance roadmap for your lending business.</p>
+      <h2>Need Support in Achieving Your <br><em>Ambitions?</em></h2>
       <a href="#" class="btn btn-outline" onclick="return showPage('contact')">Talk to Our Team</a>
     </div>
 
@@ -1724,15 +1812,14 @@
   <!-- ═══ SERVICES ═══ -->
   <div class="page" id="page-services">
     <div class="page-header" data-bg="SERVICES">
-      <span class="section-eyebrow">What We Offer</span>
-      <h1>Advisory Across<br>Every Critical Lever</h1>
-      <p>We achieve client outcomes through advisory support spanning Product, Policy, Process, Distribution, People and
-        Technology.</p>
+      <h1>Our Commitment</h1>
+      <p>Immerse ourselves in your success, with an intention to put our skin in the game.</p>
     </div>
 
     <section style="background:var(--white);">
       <div class="section-title">Services <em>Offered</em></div>
-      <p class="section-desc" style="max-width: none;">Strategic Advisory shapes the 'what'; Operating Model Transformation delivers the 'how'.</p>
+      <p class="section-desc" style="max-width: none;">Strategic Advisory shapes the 'what'; Operating Model
+        Transformation delivers the 'how'.</p>
       <div class="services-ticker-grid">
         <div class="ticker-item ticker-blue">STRATEGIC ADVISORY</div>
         <div class="ticker-item ticker-sky">OPERATING MODEL TRANSFORMATION</div>
@@ -1743,37 +1830,46 @@
     <section style="background:var(--gray);">
       <div class="section-title" style="color:var(--white);">Our Proprietary <em>Assets</em></div>
       <div class="grid-4" style="margin-top:3rem; background:var(--border-w);">
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
           <h3 style="font-size: 1.05rem; margin: 0; line-height: 1.4;">Collection Enhancement Model</h3>
         </div>
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
           <h3 style="font-size: 1.05rem; margin: 0; line-height: 1.4;">Ready to use BRDs</h3>
         </div>
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
           <h3 style="font-size: 1.05rem; margin: 0; line-height: 1.4;">Industry leading Workflows</h3>
         </div>
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
           <h3 style="font-size: 1.05rem; margin: 0; line-height: 1.4;">Ready ref. Policy documents</h3>
         </div>
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
           <h3 style="font-size: 1.05rem; margin: 0; line-height: 1.4;">Unique Loan Distribution Database</h3>
         </div>
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
           <h3 style="font-size: 1.05rem; margin: 0; line-height: 1.4;">Unique Talent Database (3000+)</h3>
         </div>
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center;">
           <h3 style="font-size: 1.05rem; margin: 0; line-height: 1.4;">Underwriting & Industry Reports</h3>
         </div>
-        <div class="card card-gray" style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px dashed rgba(255,255,255,0.2);">
-          <h3 style="font-size: 1.05rem; color: var(--sky); margin: 0; line-height: 1.4;">AI Based assets - coming soon</h3>
+        <div class="card card-gray"
+          style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px dashed rgba(255,255,255,0.2);">
+          <h3 style="font-size: 1.05rem; color: var(--sky); margin: 0; line-height: 1.4;">AI Based assets - coming soon
+          </h3>
         </div>
       </div>
     </section>
 
     <section style="background:var(--light);">
-      <span class="section-eyebrow">How We Engage</span>
       <div class="section-title">Engagement <em>Models</em></div>
-      <p class="section-desc">Two engagement modes that build on each other - Management Immersion is Strategic Advisory plus accountability for outcomes.
+      <p class="section-desc">Engagement modes that build on each other - Management Immersion is Strategic Advisory
+        plus accountability for outcomes.
       </p>
       <div class="models-grid" id="modelsGrid"></div>
     </section>
@@ -1819,11 +1915,18 @@
       <div class="section-title">What Our <em>Clients Say</em></div>
       <div class="grid-2" style="margin-top:3rem;">
         <div class="fade-in" style="background:var(--light); padding:3rem; border-left:4px solid var(--sky);">
-          <div style="font-family:'Georgia', serif; font-size:3rem; color:var(--sky); line-height:0.5; margin-bottom:1rem;">"</div>
-          <p style="font-size:1.1rem; line-height:1.7; color:var(--gray); font-style:italic; margin-bottom:2rem;">[Ababa]</p>
+          <div
+            style="font-family:'Georgia', serif; font-size:3rem; color:var(--sky); line-height:0.5; margin-bottom:1rem;">
+            "</div>
+          <p style="font-size:1.1rem; line-height:1.7; color:var(--gray); font-style:italic; margin-bottom:2rem;">
+            [Ababa]</p>
           <div>
-            <div style="font-family:'Nord','Montserrat',sans-serif; font-weight:700; color:var(--blue); font-size:1.1rem;">[Client Name]</div>
-            <div style="font-size:0.85rem; color:var(--sky); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0.3rem 0;">[Designation, Department]</div>
+            <div
+              style="font-family:'Nord','Montserrat',sans-serif; font-weight:700; color:var(--blue); font-size:1.1rem;">
+              [Client Name]</div>
+            <div
+              style="font-size:0.85rem; color:var(--sky); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; margin:0.3rem 0;">
+              [Designation, Department]</div>
             <div style="font-size:0.85rem; color:#666;">[Company / Institution]</div>
           </div>
         </div>
@@ -1859,7 +1962,8 @@
 
         <div class="fade-in" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: start;">
           <div class="contact-person" style="flex-direction: column; border: none; padding: 0;">
-            <div class="contact-icon" style="margin-bottom: 1rem; width: 56px; height: 56px; font-size: 1.2rem;">AT</div>
+            <div class="contact-icon" style="margin-bottom: 1rem; width: 56px; height: 56px; font-size: 1.2rem;">AT
+            </div>
             <div class="contact-details">
               <h4>Mr. Abhishek Tiwari</h4>
               <div class="role">Chief Executive Officer</div>
@@ -1869,7 +1973,8 @@
           </div>
 
           <div class="contact-person" style="flex-direction: column; border: none; padding: 0;">
-            <div class="contact-icon" style="margin-bottom: 1rem; width: 56px; height: 56px; font-size: 1.2rem;">VS</div>
+            <div class="contact-icon" style="margin-bottom: 1rem; width: 56px; height: 56px; font-size: 1.2rem;">VS
+            </div>
             <div class="contact-details">
               <h4>Mr. Vaibhav Sharma</h4>
               <div class="role">Senior Leadership</div>
@@ -1902,12 +2007,12 @@
       { num: 'II', title: 'Policy & Process', items: ['Policy re-design', 'Industry leading process re-design', 'Real world Workflows / SOPs', 'Successfully implemented BRDs / FSDs / wireframes'] },
       { num: 'III', title: 'Distribution Model', items: ['Model options and detailed execution plan', 'Improvement of Branch viability & productivity', 'Support Pin-code level planning and execution', 'Revisit Branch/ CPC org. structure'] },
       { num: 'IV', title: 'People', items: ['Unique talent database with specific references', 'Incentive re-design', 'Org. structures that have delivered results', 'Capability development interventions'] },
-      { num: 'V', title: 'Technology', items: ['Customer & back-office stack', 'Regulatory & cyber compliance', 'Functional oversight on build', 'LOS / LMS functional support'] },
+      { num: 'V', title: 'Technology', items: ['Customer & back-office stack', 'Regulatory & cyber compliance', 'Functional oversight on technology implementation (LOS/LMS)'] },
     ];
 
     const models = [
-      { tag: 'Tier 1 · Point-in-time', title: 'Strategic Advisory', desc: 'Structured, outcome-oriented advisory. We partner with your leadership to diagnose growth constraints, set target KPIs, and redesign product-market fit, customer strategy, pricing, and operating models, with the difference that the advice is grounded in actual operating experience inside Banks, NBFCs, and HFCs.', benefits: ['Point-in-time recommendations', 'Diagnose growth constraints', 'Redesign product-market fit & operating models'], featured: false },
-      { tag: 'Tier 2 · On-going + KPI-Owned', title: 'Management Immersion', desc: 'We own the outcomes of advice, with commitment to achieve defined targets and sharing of success. This we do through execution-focused on-going support. We embed senior leaders + key L-1 experts to oversee Operations, operating as a +1 to your existing leaders.', benefits: ['Strategic Advisory + execution accountability', 'Commitment to achieve defined targets', 'Structured governance until KPIs are achieved'], featured: true },
+      { title: 'Strategic Advisory', desc: 'Structured, outcome-oriented advisory. We partner with your leadership to diagnose growth constraints, set target KPIs, and redesign product-market fit, customer strategy, pricing, and operating models, with the difference that the advice is grounded in actual operating experience inside Banks, NBFCs, and HFCs.', benefits: ['Bespoke & Fast-paced', 'Incorporated with industry leading practices', 'Based on real-world experience', 'Not ‘Just slides’ but Board level advisory'], featured: false },
+      { title: 'Management Immersion', desc: 'We own the outcomes of advice, with commitment to achieve defined targets and sharing of success. This we do through execution-focused on-going support. We also embed senior leaders + key L-1 experts to oversee Operations, operating as a +1 to your existing leaders.', benefits: ['Strategic Advisory + execution accountability', 'Commitment to achieve defined targets', 'Structured governance for KPI achievement', 'Explore Risk sharing model- success based'], featured: true },
     ];
 
     const team = [
@@ -1980,7 +2085,7 @@
       if (!el) return;
       el.innerHTML = models.map(m => `
     <div class="model-card ${m.featured ? 'model-card-featured' : ''} fade-in">
-      <span class="model-tag-pill">${m.tag}</span>
+      ${m.tag ? `<span class="model-tag-pill">${m.tag}</span>` : ''}
       <h3>${m.title}</h3>
       <p>${m.desc}</p>
       <ul class="model-benefits">${m.benefits.map(b => `<li>${b}</li>`).join('')}</ul>
