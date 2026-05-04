@@ -1547,6 +1547,148 @@
         grid-template-columns: 1fr;
       }
     }
+
+    /* ── LEAFLET ACCORDION ── */
+    .leaflet-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .leaflet-item {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+      transition: all 0.3s ease;
+    }
+
+    .leaflet-item.active {
+      border-color: var(--sky);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .leaflet-header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      background: var(--white);
+      transition: background 0.3s ease;
+    }
+
+    .leaflet-header:hover {
+      background: #f8f9fa;
+    }
+
+    .leaflet-item.active .leaflet-header {
+      background: var(--blue);
+    }
+
+    .leaflet-title {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .leaflet-tag {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sky);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .leaflet-item.active .leaflet-tag {
+      color: rgba(255,255,255,0.8);
+    }
+
+    .leaflet-header h3 {
+      font-size: 1.25rem;
+      color: var(--blue);
+      margin: 0;
+      font-family: 'Nord','Montserrat',sans-serif;
+    }
+
+    .leaflet-item.active .leaflet-header h3 {
+      color: var(--white);
+    }
+
+    .leaflet-icon {
+      color: var(--blue);
+      transition: transform 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .leaflet-item.active .leaflet-icon {
+      color: var(--white);
+      transform: rotate(180deg);
+    }
+
+    .leaflet-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+      background: var(--light);
+    }
+
+    .leaflet-item.active .leaflet-content {
+      max-height: 800px; /* Adjust if content is very long */
+    }
+
+    .leaflet-inner {
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .leaflet-inner p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--gray);
+      margin: 0;
+      white-space: pre-wrap;
+    }
+
+    /* ── CASE STUDY GRID ── */
+    .cs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .cs-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .cs-heading {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--sky);
+      padding-bottom: 0.5rem;
+    }
+
+    .cs-text {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--gray);
+    }
+
+    @media (max-width: 768px) {
+      .cs-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
   </style>
 </head>
 
@@ -1898,20 +2040,17 @@
   <!-- ═══ CLIENT STORIES ═══ -->
   <div class="page" id="page-credentials">
     <div class="page-header" data-bg="WORK">
-      <span class="section-eyebrow">Body of Work</span>
       <h1>Proven Results<br>Across <em>Leading Institutions</em></h1>
       <p>A track record of delivering measurable outcomes for large banks, NBFCs, HFCs and fintech lenders across India.
       </p>
     </div>
 
     <section style="background:var(--light);">
-      <span class="section-eyebrow">Client Engagements</span>
       <div class="section-title">Our <em>Client Stories</em></div>
       <div class="ow-list" id="credGrid"></div>
     </section>
 
     <section style="background:var(--white);">
-      <span class="section-eyebrow">Client Testimonials</span>
       <div class="section-title">What Our <em>Clients Say</em></div>
       <div class="grid-2" style="margin-top:3rem;">
         <div class="fade-in" style="background:var(--light); padding:3rem; border-left:4px solid var(--sky);">
@@ -2025,12 +2164,12 @@
     ];
 
     const credentials = [
-      { tag: 'Policy & Expansion', client: 'Mid-Sized HFC · ~₹1,100 Cr AUM', scope: ['Business segment mix', 'Yield-risk analysis', 'Portfolio diversification strategy', 'Collateral standards', 'Credit policy & underwriting frameworks', 'Risk-based pricing inputs', 'Collections policy review'], dark: false },
-      { tag: 'Project 3x3', client: '3rd Largest Private Sector Bank', scope: ['Business segment mix', 'Yield-risk analysis', 'Portfolio diversification strategy', 'Collateral standards', 'Credit policy & underwriting', 'Risk-based pricing inputs', 'Processing & Ops review'], dark: false },
-      { tag: 'North Star Metric on Yield', client: 'Fintech NBFC · ~₹11,600 Cr AUM', scope: ['Business segment mix', 'Yield-risk analysis', 'Portfolio diversification strategy', 'Collateral standards', 'Credit policy & underwriting frameworks', 'Risk-based pricing inputs', 'Collections policy review'], dark: false },
-      { tag: 'Geo Expansion & Market Assessment', client: 'Pune-based AHFC · ~₹1,000 Cr AUM', scope: ['New expansion geographies for affordable housing finance', 'Risk-sharing underwriting for cases', 'Strengthening of external PD'], dark: false },
-      { tag: 'Policy & Data Analytics', client: 'South Indian Bank · ~₹1.9 Lakh Cr Total Business', scope: ['Policy benchmarking with competitors', 'Identifying potential affordable customer leads from ETB base'], dark: false },
-      { tag: 'Operations Capability', client: 'Market Scale Demonstrated', scope: ['150+ clients across 4 core services', '~24,000 technical transactions/month', '~3,000 legal transactions/month', '~5,000 credit transactions/month', '600+ field executives', '450+ drafters across verticals'], dark: true, big: '150+', bigLabel: 'Clients Served' },
+      { tag: 'Policy & Expansion', client: 'Mid-Sized HFC · ~₹1,100 Cr AUM', challenge: 'The client was facing hurdles in disbursement growth pan India and at the same time was facing increasing NPA issues in key regions. They reached out to us for advise on how to reverse stagnating disbursement and improved collections in affected regions.', approach: 'We reviewed their end to end origination process from login to handover as well as associated policies. We provided specific recommendations on process improvement as well modifications needed in the policies needed to improve disbursement. In addition, we also designed two new products catering to segments they had limited penetration in. On collections, our SMEs provided specific inputs to the client leadership in improving PAR + across buckets including advise on Pre-delinquency management.', dark: false },
+      { tag: 'Project 3x3', client: '3rd Largest Private Sector Bank', challenge: 'The client wanted to rapidly scale up monthly disbursements by 2.5X by reviewing product-market fit and customer segments. They wanted Greenfinch\'s expertise in micro-market assessment pan India to identify growth pockets and provide specific inputs on how the target can be achieved. They also wanted Greenfinch to provide on-going hand-holding support in executing the advise.', approach: 'We studied their existing book across levers including Product, Processes, Policies, Operations, Branch/Distribution model and talent; and provided implementable advise across these dimensions. We then proceeded to support them in day to day implementation support of these recommendations, with a deep dive in product and collateral standards. We are leveraging our \'nose to the ground\' capabilities in providing expert inputs on recommendations of a global MNC consultant, helping client in making optimal decisions.', dark: false },
+      { tag: 'North Star Metric on Yield', client: 'Fintech NBFC · ~₹11,600 Cr AUM', challenge: 'A digitally native NBFC\'s mortgage business needed a profitability improvement intervention. They wanted to significantly improve operational efficiency for the mortgage business especially considering their digital DNA.', approach: 'Our review identified three levers of improving ROA in this particular case: 1) Yield improvement by relooking at product-market-customer fit; 2) Opex efficiency especially on processing of cases across legal+technical+credit reports; 3) Credit cost reduction by improving pre-delinquency management. Over a course of 3 months, we provided specific recommendations for improvement especially on product mix, customer segments, pricing, credit policy and collateral standards. These were customized to suit their digital DNA and were made bespoke. We continue to provide monthly support through our SMEs including geography specific insights as and when needed.', dark: false },
+      { tag: 'Geo Expansion & Market Assessment', client: 'Pune-based AHFC · ~₹1,000 Cr AUM', challenge: 'The client wanted to spread their presence pan-India and wanted our help in identifying micro-markets where they could grow in. In addition, they wanted detailed advise on Collateral standards including do\'s and don\'ts.', approach: 'We conducted a detailed pincode level analysis including route mapping along their existing branches. We provided specific growth projections in these geographies, highlighting significant opportunities to grow. We went beyond the geographic opportunity assessment and also provided views on expected customer profiles, what pricing will work, competitive views at a high level for the management to take a considered view. We also reviewed the Collateral standards to provide advise on town specific collateral standards.', dark: false },
+      { tag: 'Policy & Data Analytics', client: 'South Indian Bank · ~₹1.9 Lakh Cr Total Business', challenge: 'Client reached out for an expert review of Credit Policy and deviations matrix and wanted Greenfinch to re-design them in line with long term vision of the business leaders.', approach: 'We provided a detailed Credit policy note including deviation matrix after a detailed competitive benchmarking exercise. The Credit policy was accepted and duly approved by the business.', dark: false },
+      { tag: 'Operations Capability', client: 'Market Scale Demonstrated', challenge: 'Need for high-volume operational capability across legal, technical, and credit transactions.', approach: 'We demonstrated market scale by servicing 150+ clients across 4 core services, handling ~24,000 technical transactions, ~3,000 legal transactions, and ~5,000 credit transactions monthly, powered by 600+ field executives and 450+ drafters.', dark: true },
     ];
 
     const ecosystem = [
@@ -2115,16 +2254,47 @@
     function renderCreds(id) {
       const el = document.getElementById(id);
       if (!el) return;
-      el.innerHTML = credentials.map((c, i) => `
-    <div class="ow-row fade-in" style="background: ${i % 2 === 0 ? 'var(--blue)' : 'var(--sky)'};">
-      <div class="ow-num">${c.tag}</div>
-      <div class="ow-content">
-        <h3>${c.client}</h3>
-        <ul>${c.scope.map(s => `<li>${s}</li>`).join('')}</ul>
+      el.innerHTML = '<div class="leaflet-container">' + credentials.map((c, i) => `
+    <div class="leaflet-item fade-in">
+      <div class="leaflet-header" onclick="toggleLeaflet(this)">
+        <div class="leaflet-title">
+          <span class="leaflet-tag">${c.tag}</span>
+          <h3>${c.client}</h3>
+        </div>
+        <div class="leaflet-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg></div>
+      </div>
+      <div class="leaflet-content">
+        <div class="leaflet-inner">
+          <div class="cs-grid">
+            <div class="cs-section">
+              <div class="cs-heading">The Challenge</div>
+              <div class="cs-text">${c.challenge}</div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-heading">Our Approach</div>
+              <div class="cs-text">${c.approach}</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  `).join('');
+  `).join('') + '</div>';
       observeFade();
+    }
+
+    function toggleLeaflet(header) {
+      const item = header.parentElement;
+      const isActive = item.classList.contains('active');
+      
+      // Close all other leaflets
+      document.querySelectorAll('.leaflet-item').forEach(el => {
+        el.classList.remove('active');
+      });
+      
+      // Toggle current leaflet
+      if (!isActive) {
+        item.classList.add('active');
+      }
     }
 
     function renderFooter(id) {
