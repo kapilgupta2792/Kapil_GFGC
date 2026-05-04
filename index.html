@@ -1252,25 +1252,40 @@
 
     /* ── CTA BANNER ── */
     .cta-banner {
-      background: var(--blue);
+      background: var(--white);
       padding: 5rem 5%;
       text-align: center;
+      border-top: 1px solid var(--border);
     }
 
     .cta-banner h2 {
       font-family: 'Nord', 'Montserrat', sans-serif;
       font-size: clamp(2rem, 4vw, 3.5rem);
       font-weight: 700;
-      color: var(--white);
+      color: var(--blue);
       margin-bottom: 1rem;
+    }
+    
+    .cta-banner h2 em {
+      color: var(--gray);
     }
 
     .cta-banner p {
-      color: rgba(255, 255, 255, 0.75);
+      color: #666;
       font-size: 1rem;
       max-width: 480px;
       margin: 0 auto 2rem;
       line-height: 1.7;
+    }
+    
+    .cta-banner .btn-outline {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+    
+    .cta-banner .btn-outline:hover {
+      background: var(--blue);
+      color: var(--white);
     }
 
     /* ── FOOTER ── */
@@ -1526,7 +1541,7 @@
       <li><a href="#" onclick="return showPage('about')" id="nav-about" class="active">About</a></li>
       <li><a href="#" onclick="return showPage('services')" id="nav-services">Services</a></li>
       <li><a href="#" onclick="return showPage('team')" id="nav-team">Our Team</a></li>
-      <li><a href="#" onclick="return showPage('credentials')" id="nav-credentials">Credentials</a></li>
+      <li><a href="#" onclick="return showPage('credentials')" id="nav-credentials">Client Stories</a></li>
       <li><a href="#" onclick="return showPage('contact')" id="nav-contact">Contact</a></li>
     </ul>
     <button class="nav-hamburger" onclick="toggleNav()" id="hamburger">
@@ -1539,13 +1554,13 @@
     <div class="hero">
       <div class="hero-top-bar"></div>
       <div class="hero-content">
-        <h1>Outcome Focused Advisory<br>for <em>Financial Services</em></h1>
+        <h1>Outcome Linked Advisory<br>for <em>Financial Services</em></h1>
         <p class="hero-sub"
           style="font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; color: var(--sky); text-transform: uppercase;">
           Banks · NBFCs · HFCs · New Age Fintechs</p>
         <div class="hero-actions">
           <a href="#" class="btn btn-primary" onclick="return showPage('services')">Explore Services</a>
-          <a href="#" class="btn btn-outline" onclick="return showPage('credentials')">View Credentials</a>
+          <a href="#" class="btn btn-outline" onclick="return showPage('credentials')">View Client Stories</a>
         </div>
       </div>
     </div>
@@ -1559,37 +1574,28 @@
     </div>
 
     <section style="background:var(--white);">
+      <div class="fade-in" style="text-align: center; margin-bottom: 3rem;">
+        <div class="section-title">Grounded in <em>Real Experience</em></div>
+      </div>
       <div class="contact-grid">
         <div class="fade-in">
-          <span class="section-eyebrow">Our Story</span>
-          <div class="section-title">Grounded in<br><em>Real Experience</em></div>
-
-          <div style="display:flex; gap:1.5rem; margin:2.5rem 0; flex-wrap:wrap;">
-            <div
-              style="flex:1; min-width:140px; padding:1.5rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:4px;">
-              <div
-                style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
+          <div style="display:flex; flex-direction:column; gap:1.5rem;">
+            <div style="padding:2.5rem 2rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:0;">
+              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
                 1 Trillion</div>
-              <div
-                style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.5rem; line-height:1.4;">
+              <div style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
                 Combined managed loanbook experience of leadership</div>
             </div>
-            <div
-              style="flex:1; min-width:140px; padding:1.5rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:4px;">
-              <div
-                style="font-family:'Nord','Montserrat',sans-serif; font-size:1.8rem; font-weight:700; color:var(--blue); line-height:1.1;">
+            <div style="padding:2.5rem 2rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:0;">
+              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:1.8rem; font-weight:700; color:var(--blue); line-height:1.1;">
                 Diverse clientele</div>
-              <div
-                style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.5rem; line-height:1.4;">
+              <div style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
                 From large banks to a digital native fintech NBFC</div>
             </div>
-            <div
-              style="flex:1; min-width:140px; padding:1.5rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:4px;">
-              <div
-                style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
+            <div style="padding:2.5rem 2rem; background:#f8f9fa; border-left:3px solid var(--sky); border-radius:0;">
+              <div style="font-family:'Nord','Montserrat',sans-serif; font-size:2.2rem; font-weight:700; color:var(--blue); line-height:1;">
                 6 Layers</div>
-              <div
-                style="font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.5rem; line-height:1.4;">
+              <div style="font-size:0.85rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:#666; margin-top:0.8rem; line-height:1.4;">
                 Advisory across Product, policy, process, distribution, people & technology.</div>
             </div>
           </div>
@@ -1613,89 +1619,89 @@
       </div>
     </section>
 
-    <section style="background:var(--gray);">
-      <div style="max-width: 1200px; margin: 0 auto; padding: 0 1rem;">
+    <section style="background:var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+      <div style="max-width: 1400px; margin: 0 auto; padding: 0 1rem;">
         <span class="section-eyebrow">What We Deliver</span>
-        <div class="section-title" style="color:var(--white);">What Outcomes<br><em>We Commit To</em></div>
-        <p class="section-desc" style="color:var(--text-muted); max-width: 800px;"><strong>THE COMMITMENT:</strong> Committed to immerse ourselves in your success, with intention to put our skin in the game, either as success fees and/or risk sharing. Outcomes are agreed upfront and tracked throughout the engagement for achievement.</p>
+        <div class="section-title" style="color:var(--blue);">What Outcomes<br><em>We Commit To</em></div>
+        <p class="section-desc" style="color:var(--gray); max-width: 800px;"><strong>THE COMMITMENT:</strong> Committed to immerse ourselves in your success, with intention to put our skin in the game, either as success fees and/or risk sharing. Outcomes are agreed upfront and tracked throughout the engagement for achievement.</p>
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-top: 4rem;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 4rem;">
           
           <!-- Card 1 -->
-          <div class="fade-in" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 2.5rem; transition: transform 0.3s ease;">
-            <div style="color: var(--sky); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+            <div style="color: var(--blue); margin-bottom: 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
             </div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white); font-family: 'Nord','Montserrat',sans-serif;">Disbursement Growth</h3>
-            <ul style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Disbursement Growth</h3>
+            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Break the stagnation</li>
               <li>Better market fit</li>
               <li>Improving confidence to lend</li>
             </ul>
-            <p style="font-size: 0.95rem; color: #ddd; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin: 0;">
+            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
               Targeted product-market fit interventions, with real-time advisory and on-ground support to improve confidence to lend in underserved areas.
             </p>
           </div>
 
           <!-- Card 2 -->
-          <div class="fade-in" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 2.5rem; transition: transform 0.3s ease;">
-            <div style="color: var(--sky); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+            <div style="color: var(--blue); margin-bottom: 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
             </div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white); font-family: 'Nord','Montserrat',sans-serif;">Desired Yield</h3>
-            <ul style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Desired Yield</h3>
+            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Incorporating the trade-offs</li>
               <li>Target segments & pricing</li>
               <li>Based on actual pan-India experience</li>
             </ul>
-            <p style="font-size: 0.95rem; color: #ddd; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin: 0;">
+            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
               Segmentation/personas, risk-based pricing framework and market insights.
             </p>
           </div>
 
           <!-- Card 3 -->
-          <div class="fade-in" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 2.5rem; transition: transform 0.3s ease;">
-            <div style="color: var(--sky); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+            <div style="color: var(--blue); margin-bottom: 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
             </div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white); font-family: 'Nord','Montserrat',sans-serif;">Reducing Opex</h3>
-            <ul style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Reducing Opex</h3>
+            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Focus on Opex / disbursement</li>
               <li>Process, People, Technology</li>
               <li>Fix target KPI and achieve in a time bound manner</li>
             </ul>
-            <p style="font-size: 0.95rem; color: #ddd; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin: 0;">
+            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
               Support in running industry leading operating practices - leveraging expertise from running ops at industry leading numbers.
             </p>
           </div>
 
           <!-- Card 4 -->
-          <div class="fade-in" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 2.5rem; transition: transform 0.3s ease;">
-            <div style="color: var(--sky); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+            <div style="color: var(--blue); margin-bottom: 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
             </div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white); font-family: 'Nord','Montserrat',sans-serif;">Better Managed PAR</h3>
-            <ul style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Better Managed PAR</h3>
+            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Evolving with increasing book size</li>
               <li>Not dashboards, but real-time inputs on portfolio management</li>
             </ul>
-            <p style="font-size: 0.95rem; color: #ddd; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin: 0;">
+            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
               Bring to fore track record of delivering fast growth while keeping industry leading book quality.
             </p>
           </div>
 
           <!-- Card 5 -->
-          <div class="fade-in" style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 8px; padding: 2.5rem; transition: transform 0.3s ease;">
-            <div style="color: var(--sky); margin-bottom: 1.5rem;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
+          <div class="fade-in" style="background: #f8f9fa; border-top: 4px solid var(--sky); padding: 2rem 1.5rem; display: flex; flex-direction: column;">
+            <div style="color: var(--blue); margin-bottom: 1.5rem;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="22" y1="12" x2="18" y2="12"></line><line x1="6" y1="12" x2="2" y2="12"></line><line x1="12" y1="6" x2="12" y2="2"></line><line x1="12" y1="22" x2="12" y2="18"></line></svg>
             </div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--white); font-family: 'Nord','Montserrat',sans-serif;">Improved ROA / ROE</h3>
-            <ul style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6;">
+            <h3 style="font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--blue); font-family: 'Nord','Montserrat',sans-serif;">Improved ROA / ROE</h3>
+            <ul style="color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; padding-left: 1.2rem; line-height: 1.6; flex-grow: 1;">
               <li>Focused on shareholder interests</li>
               <li>Target ROA / ROE locked upfront</li>
               <li>Achievement in a timebound manner</li>
             </ul>
-            <p style="font-size: 0.95rem; color: #ddd; line-height: 1.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; margin: 0;">
+            <p style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
               Leadership commitment to achieve desired numbers through on-going support and success fees/risk sharing based models.
             </p>
           </div>
@@ -1793,7 +1799,7 @@
     <div id="footer-team"></div>
   </div>
 
-  <!-- ═══ CREDENTIALS ═══ -->
+  <!-- ═══ CLIENT STORIES ═══ -->
   <div class="page" id="page-credentials">
     <div class="page-header" data-bg="WORK">
       <span class="section-eyebrow">Body of Work</span>
@@ -1804,7 +1810,7 @@
 
     <section style="background:var(--light);">
       <span class="section-eyebrow">Client Engagements</span>
-      <div class="section-title">Our <em>Credentials</em></div>
+      <div class="section-title">Our <em>Client Stories</em></div>
       <div class="ow-list" id="credGrid"></div>
     </section>
 
@@ -1908,9 +1914,9 @@
       { i: 'SKA', name: 'Mr. Sushil Kumar Agarwal', role: 'Founder & Promoter', bio: '25+ years in Financial Services. Founder, MD & CEO of Aavas Financiers. Harvard Business School OPM alumnus. CA Gold Medalist and EY Entrepreneur of the Year 2020.' },
       { i: 'AT', name: 'Mr. Abhishek Tiwari', role: 'Chief Executive Officer', bio: '25+ years in retail lending. Previously Insurance Distribution Head at AU Small Finance Bank, managing a ₹2,000 Cr premium book. Chartered Accountant and Law Graduate.' },
       { i: 'ART', name: 'Mr. Arvind Tungaria', role: 'Chief Operating Officer', bio: '22+ years in secured lending & ops. Previously National Business Manager at AU Small Finance Bank, where he built a ₹5,000 Cr SME book. Chartered Accountant.' },
+      { i: 'VB', name: 'Mr. Vaibhav Sharma', role: 'Chief Business Officer', bio: '17+ years in consulting (Advise & Implementation). Former Engagement Partner (Banking & Financial Services) at Deloitte South Asia, leading multiple NBFC setup and transformation engagements.' },
       { i: 'SS', name: 'Mr. Surendra Sihag', role: 'Senior Leadership', bio: '25+ years in debt, collections & recovery. Previously Chief Collections Officer at Aavas Financiers and National Head of Collections at Bajaj Finance. Law Graduate (LLB) with MBA in Finance.' },
       { i: 'AJ', name: 'Mr. Amit Jain', role: 'Senior Leadership', bio: '22+ years in banking & finance. Managed ₹15,000 Cr AUM in secured business loans. Held leadership roles at AU Bank and Religare. Chartered Accountant.' },
-      { i: 'VB', name: 'Mr. Vaibhav Sharma', role: 'Senior Leadership', bio: '17+ years in consulting (Advise & Implementation). Former Engagement Partner (Banking & Financial Services) at Deloitte South Asia, leading multiple NBFC setup and transformation engagements.' },
     ];
 
     const credentials = [
@@ -2031,7 +2037,7 @@
           <ul>
             <li><a href="#" onclick="return showPage('about')">About Us</a></li>
             <li><a href="#" onclick="return showPage('team')">Our Team</a></li>
-            <li><a href="#" onclick="return showPage('credentials')">Credentials</a></li>
+            <li><a href="#" onclick="return showPage('credentials')">Client Stories</a></li>
           </ul>
         </div>
         <div class="footer-col">
