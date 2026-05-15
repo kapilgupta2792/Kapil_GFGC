@@ -1656,9 +1656,10 @@
 
     /* ── CASE STUDY GRID ── */
     .cs-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      display: flex;
+      flex-direction: column;
       gap: 3rem;
+      padding: 1rem 0;
     }
 
     .cs-section {
@@ -1668,25 +1669,47 @@
     }
 
     .cs-heading {
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1.25rem;
+      font-weight: 800;
       color: var(--blue);
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border-bottom: 2px solid var(--sky);
-      padding-bottom: 0.5rem;
+    }
+
+    .cs-content {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .cs-icon {
+      flex-shrink: 0;
+      width: 70px;
+      height: 70px;
+      color: var(--sky);
+    }
+
+    .cs-icon svg {
+      width: 100%;
+      height: 100%;
+      stroke-width: 1.5;
     }
 
     .cs-text {
-      font-size: 0.95rem;
+      flex-grow: 1;
+      font-size: 1rem;
       line-height: 1.6;
       color: var(--gray);
     }
 
     @media (max-width: 768px) {
-      .cs-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+      .cs-content {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .cs-icon {
+        width: 50px;
+        height: 50px;
       }
     }
   </style>
@@ -2164,12 +2187,12 @@
     ];
 
     const credentials = [
-      { tag: 'Policy & Expansion', client: 'Mid-Sized HFC · ~₹1,100 Cr AUM', challenge: 'The client was facing hurdles in disbursement growth pan India and at the same time was facing increasing NPA issues in key regions. They reached out to us for advise on how to reverse stagnating disbursement and improved collections in affected regions.', approach: 'We reviewed their end to end origination process from login to handover as well as associated policies. We provided specific recommendations on process improvement as well modifications needed in the policies needed to improve disbursement. In addition, we also designed two new products catering to segments they had limited penetration in. On collections, our SMEs provided specific inputs to the client leadership in improving PAR + across buckets including advise on Pre-delinquency management.', dark: false },
-      { tag: 'Project 3x3', client: '3rd Largest Private Sector Bank', challenge: 'The client wanted to rapidly scale up monthly disbursements by 2.5X by reviewing product-market fit and customer segments. They wanted Greenfinch\'s expertise in micro-market assessment pan India to identify growth pockets and provide specific inputs on how the target can be achieved. They also wanted Greenfinch to provide on-going hand-holding support in executing the advise.', approach: 'We studied their existing book across levers including Product, Processes, Policies, Operations, Branch/Distribution model and talent; and provided implementable advise across these dimensions. We then proceeded to support them in day to day implementation support of these recommendations, with a deep dive in product and collateral standards. We are leveraging our \'nose to the ground\' capabilities in providing expert inputs on recommendations of a global MNC consultant, helping client in making optimal decisions.', dark: false },
-      { tag: 'North Star Metric on Yield', client: 'Fintech NBFC · ~₹11,600 Cr AUM', challenge: 'A digitally native NBFC\'s mortgage business needed a profitability improvement intervention. They wanted to significantly improve operational efficiency for the mortgage business especially considering their digital DNA.', approach: 'Our review identified three levers of improving ROA in this particular case: 1) Yield improvement by relooking at product-market-customer fit; 2) Opex efficiency especially on processing of cases across legal+technical+credit reports; 3) Credit cost reduction by improving pre-delinquency management. Over a course of 3 months, we provided specific recommendations for improvement especially on product mix, customer segments, pricing, credit policy and collateral standards. These were customized to suit their digital DNA and were made bespoke. We continue to provide monthly support through our SMEs including geography specific insights as and when needed.', dark: false },
-      { tag: 'Geo Expansion & Market Assessment', client: 'Pune-based AHFC · ~₹1,000 Cr AUM', challenge: 'The client wanted to spread their presence pan-India and wanted our help in identifying micro-markets where they could grow in. In addition, they wanted detailed advise on Collateral standards including do\'s and don\'ts.', approach: 'We conducted a detailed pincode level analysis including route mapping along their existing branches. We provided specific growth projections in these geographies, highlighting significant opportunities to grow. We went beyond the geographic opportunity assessment and also provided views on expected customer profiles, what pricing will work, competitive views at a high level for the management to take a considered view. We also reviewed the Collateral standards to provide advise on town specific collateral standards.', dark: false },
-      { tag: 'Policy & Data Analytics', client: 'South Indian Bank · ~₹1.9 Lakh Cr Total Business', challenge: 'Client reached out for an expert review of Credit Policy and deviations matrix and wanted Greenfinch to re-design them in line with long term vision of the business leaders.', approach: 'We provided a detailed Credit policy note including deviation matrix after a detailed competitive benchmarking exercise. The Credit policy was accepted and duly approved by the business.', dark: false },
-      { tag: 'Operations Capability', client: 'Market Scale Demonstrated', challenge: 'Need for high-volume operational capability across legal, technical, and credit transactions.', approach: 'We demonstrated market scale by servicing 150+ clients across 4 core services, handling ~24,000 technical transactions, ~3,000 legal transactions, and ~5,000 credit transactions monthly, powered by 600+ field executives and 450+ drafters.', dark: true },
+      { tag: 'Policy & Expansion', client: 'Mid-Sized HFC · ~₹1,100 Cr AUM', challenge: 'The client was facing hurdles in disbursement growth pan India and at the same time was facing increasing NPA issues in key regions. They reached out to us for advise on how to reverse stagnating disbursement and improved collections in affected regions.', approach: 'We reviewed their end to end origination process from login to handover as well as associated policies. We provided specific recommendations on process improvement as well modifications needed in the policies needed to improve disbursement. In addition, we also designed two new products catering to segments they had limited penetration in. On collections, our SMEs provided specific inputs to the client leadership in improving PAR + across buckets including advise on Pre-delinquency management.', impact: 'We continue to provide monthly support in monitoring execution of these recommendations and early indications are that they are bearing fruit on both disbursement and collections end.', dark: false },
+      { tag: 'Project 3x3', client: '3rd Largest Private Sector Bank', challenge: 'The client wanted to rapidly scale up monthly disbursements by 2.5X by reviewing product-market fit and customer segments. They wanted Greenfinch\'s expertise in micro-market assessment pan India to identify growth pockets and provide specific inputs on how the target can be achieved. They also wanted Greenfinch to provide on-going hand-holding support in executing the advise.', approach: 'We studied their existing book across levers including Product, Processes, Policies, Operations, Branch/Distribution model and talent; and provided implementable advise across these dimensions. We then proceeded to support them in day to day implementation support of these recommendations, with a deep dive in product and collateral standards. We are leveraging our \'nose to the ground\' capabilities in providing expert inputs on recommendations of a global MNC consultant, helping client in making optimal decisions.', impact: 'The disbursement growth is on track and in parallel, two new products have been launched in last 5 months, also, collateral standards are rolled out across the business.', dark: false },
+      { tag: 'North Star Metric on Yield', client: 'Fintech NBFC · ~₹11,600 Cr AUM', challenge: 'A digitally native NBFC\'s mortgage business needed a profitability improvement intervention. They wanted to significantly improve operational efficiency for the mortgage business especially considering their digital DNA.', approach: 'Our review identified three levers of improving ROA in this particular case: 1) Yield improvement by relooking at product-market-customer fit; 2) Opex efficiency especially on processing of cases across legal+technical+credit reports; 3) Credit cost reduction by improving pre-delinquency management. Over a course of 3 months, we provided specific recommendations for improvement especially on product mix, customer segments, pricing, credit policy and collateral standards. These were customized to suit their digital DNA and were made bespoke. We continue to provide monthly support through our SMEs including geography specific insights as and when needed.', impact: 'Discuss with Abhishek ji', dark: false },
+      { tag: 'Geo Expansion & Market Assessment', client: 'Pune-based AHFC · ~₹1,000 Cr AUM', challenge: 'The client wanted to spread their presence pan-India and wanted our help in identifying micro-markets where they could grow in. In addition, they wanted detailed advise on Collateral standards including do\'s and don\'ts.', approach: 'We conducted a detailed pincode level analysis including route mapping along their existing branches. We provided specific growth projections in these geographies, highlighting significant opportunities to grow. We went beyond the geographic opportunity assessment and also provided views on expected customer profiles, what pricing will work, competitive views at a high level for the management to take a considered view. We also reviewed the Collateral standards to provide advise on town specific collateral standards.', impact: 'This is a recent engagement and implementation is on-going.', dark: false },
+      { tag: 'Policy & Data Analytics', client: 'South Indian Bank · ~₹1.9 Lakh Cr Total Business', challenge: 'Client reached out for an expert review of Credit Policy and deviations matrix and wanted Greenfinch to re-design them in line with long term vision of the business leaders.', approach: 'We provided a detailed Credit policy note including deviation matrix after a detailed competitive benchmarking exercise. The Credit policy was accepted and duly approved by the business.', impact: 'The Credit policy was accepted and duly approved by the business and implementation is on-going.', dark: false },
+      { tag: 'Operations Capability', client: 'Market Scale Demonstrated', challenge: 'Need for high-volume operational capability across legal, technical, and credit transactions.', approach: 'We demonstrated market scale by servicing 150+ clients across 4 core services, handling ~24,000 technical transactions, ~3,000 legal transactions, and ~5,000 credit transactions monthly, powered by 600+ field executives and 450+ drafters.', impact: 'Currently supporting operations with high efficiency and reduced turnaround times.', dark: true },
     ];
 
     const ecosystem = [
@@ -2268,11 +2291,30 @@
           <div class="cs-grid">
             <div class="cs-section">
               <div class="cs-heading">The Challenge</div>
-              <div class="cs-text">${c.challenge}</div>
+              <div class="cs-content">
+                <div class="cs-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"></path><line x1="4" y1="22" x2="4" y2="15"></line></svg>
+                </div>
+                <div class="cs-text">${c.challenge}</div>
+              </div>
             </div>
             <div class="cs-section">
               <div class="cs-heading">Our Approach</div>
-              <div class="cs-text">${c.approach}</div>
+              <div class="cs-content">
+                <div class="cs-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+                </div>
+                <div class="cs-text">${c.approach}</div>
+              </div>
+            </div>
+            <div class="cs-section">
+              <div class="cs-heading">The Impact</div>
+              <div class="cs-content">
+                <div class="cs-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+                </div>
+                <div class="cs-text">${c.impact}</div>
+              </div>
             </div>
           </div>
         </div>
