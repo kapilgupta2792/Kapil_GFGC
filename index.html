@@ -1755,7 +1755,7 @@
       <div class="value-item"><span class="value-dot"></span>RAPIDLY SCALE DISBURSEMENT</div>
       <div class="value-item"><span class="value-dot"></span>RE-IMAGINE PRODUCT MARKET FIT</div>
       <div class="value-item"><span class="value-dot"></span>DRIVE OPERATIONAL EFFICIENCY</div>
-      <div class="value-item"><span class="value-dot"></span>BETTER PAR MANAGEMENT</div>
+      <div class="value-item"><span class="value-dot"></span>BETTER MANAGED PAR</div>
       <div class="value-item"><span class="value-dot"></span>DESIRED ROA</div>
     </div>
 
@@ -1847,6 +1847,7 @@
               <li>Break the stagnation</li>
               <li>Better market fit</li>
               <li>Improving confidence to lend</li>
+              <li>Team Buildup</li>
             </ul>
             <p
               style="font-size: 0.85rem; color: #555; line-height: 1.6; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; margin: 0;">
@@ -2025,7 +2026,7 @@
         </div>
         <div class="card card-gray"
           style="padding: 1.5rem; text-align: center; display: flex; align-items: center; justify-content: center; background: transparent; border: 1px dashed rgba(255,255,255,0.2);">
-          <h3 style="font-size: 1.05rem; color: var(--sky); margin: 0; line-height: 1.4;">AI Based assets - coming soon
+          <h3 style="font-size: 1.05rem; color: var(--sky); margin: 0; line-height: 1.4;">Plug & Play AI enabled Loan Processing Asset
           </h3>
         </div>
       </div>
@@ -2169,7 +2170,7 @@
       { num: 'II', title: 'Policy & Process', items: ['Policy re-design', 'Industry leading process re-design', 'Real world Workflows / SOPs', 'Successfully implemented BRDs / FSDs / wireframes'] },
       { num: 'III', title: 'Distribution Model', items: ['Model options and detailed execution plan', 'Improvement of Branch viability & productivity', 'Support Pin-code level planning and execution', 'Revisit Branch/ CPC org. structure'] },
       { num: 'IV', title: 'People', items: ['Unique talent database with specific references', 'Incentive re-design', 'Org. structures that have delivered results', 'Capability development interventions'] },
-      { num: 'V', title: 'Technology', items: ['Customer & back-office stack', 'Regulatory & cyber compliance', 'Functional oversight on technology implementation (LOS/LMS)'] },
+      { num: 'V', title: 'Technology', items: ['Customer & back-office stack', 'Regulatory & cyber compliance', 'Functional oversight on technology implementation (LOS/LMS)', 'Tech transformation & change management'] },
     ];
 
     const models = [
@@ -2178,12 +2179,11 @@
     ];
 
     const team = [
-      { i: 'SKA', name: 'Mr. Sushil Kumar Agarwal', role: 'Founder & Promoter', bio: '25+ years in Financial Services. Founder, MD & CEO of Aavas Financiers. Harvard Business School OPM alumnus. CA Gold Medalist and EY Entrepreneur of the Year 2020.' },
-      { i: 'AT', name: 'Mr. Abhishek Tiwari', role: 'Chief Executive Officer', bio: '25+ years in retail lending. Previously Insurance Distribution Head at AU Small Finance Bank, managing a ₹2,000 Cr premium book. Chartered Accountant and Law Graduate.' },
-      { i: 'ART', name: 'Mr. Arvind Tungaria', role: 'Chief Operating Officer', bio: '22+ years in secured lending & ops. Previously National Business Manager at AU Small Finance Bank, where he built a ₹5,000 Cr SME book. Chartered Accountant.' },
-      { i: 'VB', name: 'Mr. Vaibhav Sharma', role: 'Chief Business Officer', bio: '17+ years in consulting (Advise & Implementation). Former Engagement Partner (Banking & Financial Services) at Deloitte South Asia, leading multiple NBFC setup and transformation engagements.' },
-      { i: 'SS', name: 'Mr. Surendra Sihag', role: 'Senior Leadership', bio: '25+ years in debt, collections & recovery. Previously Chief Collections Officer at Aavas Financiers and National Head of Collections at Bajaj Finance. Law Graduate (LLB) with MBA in Finance.' },
-      { i: 'AJ', name: 'Mr. Amit Jain', role: 'Senior Leadership', bio: '22+ years in banking & finance. Managed ₹15,000 Cr AUM in secured business loans. Held leadership roles at AU Bank and Religare. Chartered Accountant.' },
+      { i: 'SKA', img: 'Sushil Agarwal.jpg', name: 'Mr. Sushil Kumar Agarwal', role: 'Founder & Promoter', bio: '25+ years in Financial Services. Founder, MD & CEO of Aavas Financiers. Harvard Business School OPM alumnus. CA Gold Medalist and EY Entrepreneur of the Year 2020.' },
+      { i: 'AT', img: 'Abhishek Tiwari.JPG', name: 'Mr. Abhishek Tiwari', role: 'Chief Executive Officer', bio: '25+ years in retail lending. Previously Insurance Distribution Head at AU Small Finance Bank, managing a ₹2,000 Cr premium book. Chartered Accountant and Law Graduate.' },
+      { i: 'ART', img: 'Arvind Tungaria.png', name: 'Mr. Arvind Tungaria', role: 'Chief Operating Officer', bio: '22+ years in secured lending & ops. Previously National Business Manager at AU Small Finance Bank, where he built a ₹5,000 Cr SME book. Chartered Accountant.' },
+      { i: 'VB', img: 'Vaibhav Sharma.jpg', name: 'Mr. Vaibhav Sharma', role: 'Chief Business Officer', bio: '17+ years in consulting (Advise & Implementation). Former Engagement Partner (Banking & Financial Services) at Deloitte South Asia, leading multiple NBFC setup and transformation engagements.' },
+      { i: 'SS', img: 'Surendra Sihag.jpeg', name: 'Mr. Surendra Sihag', role: 'Senior Leadership', bio: '25+ years in debt, collections & recovery. Previously Chief Collections Officer at Aavas Financiers and National Head of Collections at Bajaj Finance. Law Graduate (LLB) with MBA in Finance.' },
     ];
 
     const credentials = [
@@ -2262,7 +2262,7 @@
       el.innerHTML = team.map(t => `
     <div class="team-card fade-in">
       <div class="team-head" style="height: 260px; padding: 0; background: #eef2f5;">
-        <img src="images/${t.i}.png" alt="${t.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
+        <img src="images/${t.img}" alt="${t.name}" style="width: 100%; height: 100%; object-fit: cover; object-position: top center;">
       </div>
       <div class="team-body">
         <h3>${t.name}</h3>
